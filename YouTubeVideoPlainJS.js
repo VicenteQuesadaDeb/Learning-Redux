@@ -52,6 +52,7 @@ const initialState = {
 /*-----------------------------------------*/
 
 console.log(initialState)
+//{tags: [], youtubeVideo: {title: "", viewCount: 0, votes: {up: 0, down: 0}}}
 
 
 /*-----------------Reducer-----------------*/
@@ -119,10 +120,18 @@ store.subscribe(() => {
 })
 
 store.dispatch(setVideoTitle("Learn Redux"))
+//{tags: [], youtubeVideo: {viewCount: 0, votes: {up: 0, down: 0}, title: "Learn Redux"}}
 store.dispatch(addUpVote())
+//{tags: [], youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {down: 0, up: 1}}}
 store.dispatch(addUpVote())
+//{tags: [], youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {down: 0, up: 2}}}
 store.dispatch(addUpVote())
+//{tags: [], youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {down: 0, up: 3}}}
 store.dispatch(addDownVote())
+//{tags: [], youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {up: 3, down: 1}}}
 store.dispatch(addTag("Code"))
+//{youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {up: 3, down: 1}}, tags: ["Code"]}
 store.dispatch(addTag("Hilarious"))
+//{youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {up: 3, down: 1}}, tags: ["Code", "Hilarious"]}
 store.dispatch(removeTag("Hilarious"))
+//{youtubeVideo: {viewCount: 0, title: "Learn Redux", votes: {up: 3, down: 1}}, tags: ["Code"]}
